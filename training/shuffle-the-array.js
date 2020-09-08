@@ -19,5 +19,18 @@ const shuffle = function (nums, n) {
   for (let i = 0; i < n; i++) {
     arr.push(nums[i], nums[i + n]);
   }
-  return arr;
+  return result;
 };
+
+// or
+
+const shuffle = function (nums, n) {
+  let result = [];
+  let halfArr = nums.slice(n);
+  for (let i = 0; i < nums.length - n; i++) {
+    result.push(nums[i], halfArr[i]);
+  }
+  return result;
+};
+
+console.log(shuffle([2, 5, 1, 3, 4, 7], 3));
