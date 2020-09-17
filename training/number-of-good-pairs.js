@@ -17,6 +17,8 @@
 // Input: nums = [1,2,3]
 // Output: 0
 
+// my solution...
+
 const numIdenticalPairs = function (nums) {
   let count = 0;
   for (let i = 0; i < nums.length; i++) {
