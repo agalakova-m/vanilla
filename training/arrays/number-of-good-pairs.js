@@ -31,49 +31,29 @@ function numIdenticalPairs(nums) {
   return count;
 }
 
-console.log(numIdenticalPairs([1, 2, 3, 1, 1, 3]));
-
 // Map method
 
 function numIdenticalPairs(nums) {
   let map = new Map();
   let count = 0;
-  for (let i = nums.length - 1; i >= 0; i--) {
-    if (map.has(nums[i])) {
-      count += map.get(nums[i]);
-      map.set(nums[i], map.get(nums[i]) + 1);
+
+  for (let item of nums) {
+    // если такой элемент уже есть в мапе
+    if (map.has(item)) {
+      count += map.get(item);
+      map.set(item, map.get(item) + 1);
     } else {
-      map.set(nums[i], 1);
+      // 1 - счетчик того, сколько раз встречаем элемент
+      map.set(item, 1);
     }
   }
+  console.log(map);
+  console.log(count);
 
   return count;
 }
 
-// another Map method
-
-function methodMap2(nums) {
-  let map = new Map();
-  let count = 0;
-
-  for (let n of nums) {
-    if (map.has(n)) {
-      map.set(n, map.get(n) + 1);
-    } else {
-      map.set(n, 1);
-    }
-  }
-
-  for (let m of map) {
-    let val = m[1];
-    val = val * (val - 1);
-    if (val > 0) {
-      count += val / 2;
-    }
-  }
-
-  return count;
-}
+console.log(numIdenticalPairs([1, 2, 3, 1, 1, 3]));
 
 // 2 line solution using reduce only
 // 🤯🤯🤯

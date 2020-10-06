@@ -19,3 +19,23 @@ function findZeroSumPair(arr) {
 
   return result;
 }
+
+function findZeroSumViaMap(arr, sum = 0) {
+  let map = new Map();
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (map.has(sum - arr[i])) {
+      map.set(arr[i], i);
+      result.push(map.get(sum - arr[i]));
+      result.push(map.get(arr[i]));
+      break;
+    } else {
+      map.set(arr[i], i);
+    }
+  }
+
+  return result;
+}
+
+findZeroSumViaMap([1, -2, 3, 4, 5, 2, -1]);
