@@ -19,7 +19,7 @@
 
 // my solution...
 
-const numIdenticalPairs = function (nums) {
+function numIdenticalPairs(nums) {
   let count = 0;
   for (let i = 0; i < nums.length; i++) {
     for (let j = 0; j < nums.length; j++) {
@@ -29,13 +29,13 @@ const numIdenticalPairs = function (nums) {
     }
   }
   return count;
-};
+}
 
 console.log(numIdenticalPairs([1, 2, 3, 1, 1, 3]));
 
 // Map method
 
-var numIdenticalPairs = function (nums) {
+function numIdenticalPairs(nums) {
   let map = new Map();
   let count = 0;
   for (let i = nums.length - 1; i >= 0; i--) {
@@ -48,11 +48,11 @@ var numIdenticalPairs = function (nums) {
   }
 
   return count;
-};
+}
 
 // another Map method
 
-var method2 = function (nums) {
+function methodMap2(nums) {
   let map = new Map();
   let count = 0;
 
@@ -73,7 +73,7 @@ var method2 = function (nums) {
   }
 
   return count;
-};
+}
 
 // 2 line solution using reduce only
 // 🤯🤯🤯
