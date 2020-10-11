@@ -12,7 +12,7 @@ function compressRepeats(str) {
   let result = [];
 
   map.forEach((key, value) => {
-    resArr.push(value, key);
+    result.push(value, key);
   });
 
   return result.join('');
